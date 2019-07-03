@@ -1,0 +1,18 @@
+{
+  "alerts":[
+    {"id_user":359,"timestamp":"2018-11-28 10:06:58","id_investment":null,"value":725.85,"id_account":null,"id_transaction":71916,"type":"highIncome","id":545},
+    {"id_user":359,"timestamp":"2018-11-28 10:07:02","id_investment":null,"value":856.5,"id_account":null,"id_transaction":71917,"type":"highIncome","id":546},
+    {"id_user":359,"timestamp":"2018-11-28 10:07:05","id_investment":null,"value":725.85,"id_account":null,"id_transaction":71919,"type":"highIncome","id":547}]
+}
+
+{
+  "alerts":[
+    {"id_user":359,"timestamp":"2018-11-24 21:31:50","id_investment":null,"value":116.18,"id_account":1295,"id_transaction":null,"type":"lowBalance","id":467},
+    {"id_user":359,"timestamp":"2018-11-26 02:40:52","id_investment":null,"value":421.51,"id_account":1298,"id_transaction":null,"type":"lowBalance","id":494}]
+}
+
+{
+  "alerts":[
+    {"id_user":173,"timestamp":"2018-11-20 12:05:57","id_investment":null,"value":7.17,"id_account":801,"id_transaction":null,"type":"lowBalance","id":1},
+    {"id_user":173,"timestamp":"2018-11-22 19:05:52","id_investment":null,"value":93.75,"id_account":800,"id_transaction":null,"type":"lowBalance","id":430}]
+}

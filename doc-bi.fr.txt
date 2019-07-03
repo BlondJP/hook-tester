@@ -1,0 +1,70 @@
+1)
+
+users/me/operationsalert/
+
+Endpoint pour définir la configuration des alertes sur les transactions et les investissements. Cela s'applique à un utilisateur donné.
+Pour voir toutes les alertes GET request, response is as below:
+{
+ "total": 1,
+ "alerts": [
+ {
+ "income_max": 500,
+ "enabled": true,
+ "date_range": null,
+ "value_type": "flat",
+ "accounts": all,
+ "type": "transactions",
+ "apply": value,
+ "expense_max": 500,
+ "id": 16
+ }
+ ]
+}
+
+Créer votre propre alerte avec une POST requeste, ou modifier une alerte existante avec une PUT requeste.
+Ci dessous les parametres a envoyer:
+
+• type: paramètre pour choisir la portée de l'alerte => enum(transactions, investments)
+
+• income_max and expense_max: seuils de gain en capital et de perte (only applicable for investments)
+
+• value_type: Si le seuil est donné en valeur absolue ou en pourcentage => enum(flat, percent)
+
+• date_range: gamme sur laquelle l'analyse doit être faite => integer: number of days
+
+• apply: Si l'alerte s'applique à chaque investissement ou au compte global => enum(account, value)
+
+• accounts: list of accounts id coma separated on wich the alert has to be applied. 'All' -> tous les comptes (valeur par defaut)
+
+
+
+
+3)
+/users/me/accountsalert/
+
+Point d'entrée pour alertes sur les comptes bancaires
+
+GET request response:
+{
+ "expense_max": 500,
+ "accounts": null,
+ "income_max": 500,
+ "balance_min2": 0,
+ "balance_min1": 500,
+ "enabled": true
+}
+
+PUT request parameters:
+
+• expense_max:   seuil à partir duquel une alerte doit être envoyée pour une dépense élevée
+
+• accounts:    liste des comptes, séparés par un virgule, sur lesquels l'alerte doit être appliquée. Si 'all' est donné,
+il est appliqué sur tous les comptes default: all
+
+• income_max:    Seuil à partir duquel une alerte doit être envoyée pour un revenu élevé
+
+• balance_min1:    Premier seuil à partir duquel une alerte doit être envoyée pour un solde faible
+
+• balance_min2:    Deuxième seuil à partir duquel une alerte doit être envoyée pour un solde faible
+
+• enabled:    si faux, l'alerte n'est pas prise en compte Vous pouvez supprimer des alertes avec une requête DELETE telle que /users/me/operationsalert/<id>
